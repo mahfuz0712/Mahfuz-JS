@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/mahfuz.js",
-  "type": "module",
   "scripts": {
     "build-mahfuz": "pkg src/mahfuz.js --targets node16-win-x64 --output ./build/mahfuz.exe",
     "build-mpm": "pkg src/mpm.js --targets node16-win-x64 --output ./build/mpm.exe"

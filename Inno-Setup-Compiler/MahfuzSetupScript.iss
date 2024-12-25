@@ -1,24 +1,24 @@
 [Setup]
 AppName=Mahfuz JS
-AppVersion=1.1.4
+AppVersion=1.0.0
 DefaultDirName={pf}\Mahfuz JS
 DefaultGroupName=Mahfuz JS
 OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
-SetupIconFile=D:\\JavaScript Projects\\Mahfuz JS\\build\\logo.ico
+SetupIconFile=D:\\JavaScript Projects\\Mahfuz-JS-MERN-Stack-Library-Tool\\build\\logo.ico
 
 [Files]
-Source: "D:\JavaScript Projects\Mahfuz JS\build\mahfuz.exe"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "D:\JavaScript Projects\Mahfuz JS\build\mpm.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "D:\JavaScript Projects\Mahfuz-JS-MERN-Stack-Library-Tool\build\mahfuz.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "D:\JavaScript Projects\Mahfuz-JS-MERN-Stack-Library-Tool\build\mpm.exe"; DestDir: "{app}"; Flags: ignoreversion 
 
 [Run]
 ; Add the application path to the system's environment variable
 Filename: "cmd"; Parameters: "/c setx PATH ""{app};%PATH%"""; Flags: runhidden
 
 [Icons]
-Name: "{group}\Mahfuz JS"; Filename: "{app}\Mahfuz JS.exe"
+Name: "{group}\Mahfuz JS"; Filename: "{app}\mahfuz.exe"
 Name: "{group}\Uninstall Mahfuz JS"; Filename: "{uninstallexe}"
 
 [UninstallDelete]
