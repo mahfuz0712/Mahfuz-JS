@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/mahfuz.js",
   "scripts": {
-    "build-mahfuz": "pkg src/mahfuz.js --targets node16-win-x64 --output ./build/mahfuz.exe",
-    "build-mpm": "pkg src/mpm.js --targets node16-win-x64 --output ./build/mpm.exe"
+    "build-mahfuz-windows": "pkg src/mahfuz.js --targets node16-win-x64 --output ./build/mahfuz.exe",
+    "build-mpm-windows": "pkg src/mpm.js --targets node16-win-x64 --output ./build/mpm.exe",
+    "build-mahfuz-linux": "pkg src/mahfuz.js --targets node16-linux-x64 --output ./build/mahfuz",
+    "build-mpm-linux": "pkg src/mpm.js --targets node16-linux-x64 --output ./build/mpm"
   },
   "keywords": [
     "MERN Stack",
