@@ -60,8 +60,13 @@ appName/
 ├── .gitignore
 └── Readme.md
 ```
-## Setup
-
+## Installation
+* Download and install from latest release from [here](https://github.com/mahfuz0712/Mahfuz-JS/releases/tag/1.0.1)
+### Setup 
+```bash
+mahfuz create-mern-app appName
+cd appName
+```
 ## Start The Backend Server
 open a new terminal and type
 ```bash
