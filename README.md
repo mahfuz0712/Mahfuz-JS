@@ -1,4 +1,4 @@
-# Getting Started With Mahfuz JS MERN Stack Library
+# Getting Started With Mahfuz JS
 
 ## Project Directory Structure
 ```
