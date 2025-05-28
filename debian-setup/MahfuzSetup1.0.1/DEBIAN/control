@@ -1,8 +1,0 @@
-Package: mahfuz
-Version: 1.0.1
-Architecture: amd64
-Maintainer: Mohammad Mahfuz Rahman <mahfuzrahman0712@gmail.com>
-Description: MERN stack library tool
- A CLI tool for developers to streamline MERN stack development.
-Priority: optional
-Section: utils
