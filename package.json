@@ -7,7 +7,10 @@
     "build-mahfuz-windows": "pkg src/mahfuz.js --targets node16-win-x64 --output ./build/mahfuz.exe",
     "build-mpm-windows": "pkg src/mpm.js --targets node16-win-x64 --output ./build/mpm.exe",
     "build-mahfuz-linux": "pkg src/mahfuz.js --targets node16-linux-x64 --output ./build/mahfuz",
-    "build-mpm-linux": "pkg src/mpm.js --targets node16-linux-x64 --output ./build/mpm"
+    "build-mpm-linux": "pkg src/mpm.js --targets node16-linux-x64 --output ./build/mpm",
+    "gen-cert": "New-SelfSignedCertificate -Type CodeSigningCert -Subject 'CN=Mohammad Mahfuz Rahman' -CertStoreLocation Cert:\\CurrentUser\\My -NotAfter (Get-Date).AddYears(5)",
+    "view-cert": "certmgr.msc",
+    "sign-setup": " signtool sign /f './Inno-Setup-Compiler/Output/MahfuzSetup.pfx' /p 'thailandnewyork' /fd SHA256 /t http://timestamp.digicert.com './Inno-Setup-Compiler/Output/setup.exe'"
   },
   "keywords": [
     "MERN Stack",

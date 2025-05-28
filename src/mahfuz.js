@@ -264,14 +264,13 @@ checkForUpdates(() => {
       path.join(backendPath, "src", "database", "db.Config.js")
     );
     backendFiles.push(
-      path.join(backendPath, "src", "routes", "user.Routes.js")
+      path.join(backendPath, "src", "routes", "user.Router.js")
     );
     backendFiles.push(path.join(backendPath, "src", "server", "server.js"));
-    backendFiles.push(path.join(backendPath, "package.json"));
     backendFiles.push(path.join(backendPath, ".env"));
     backendFiles.push(path.join(backendPath, ".prettierignore"));
     backendFiles.push(path.join(backendPath, ".prettierrc"));
-    backendFiles.push(path.join(backendPath, "README.md"));
+    backendFiles.push(path.join(backendPath, "package.json"));
     backendFiles.push(path.join(backendPath, "vercel.json"));
     // Create the sub directories
     backendSubDirs.forEach((dir) => {
@@ -285,14 +284,13 @@ checkForUpdates(() => {
     });
     // Add the code to the files
     const appJsContent = `
-// import express from "express";
 import backend from "../backend/backend.js";
 const App = backend;
 
 
 
 // Routes Import
-import UserRouter from "../routes/user.Routes.js"; // Import More Routers Here
+import UserRouter from "../routes/user.Router.js"; // Import More Routers Here
 
 // Routes Configuration
 App.Use("/api/v1/users", UserRouter);  // Use More Routes Here
@@ -408,7 +406,7 @@ export default UserRouter;
 
     `;
     fs.writeFileSync(
-      path.join(backendPath, "src", "routes", "user.Routes.js"),
+      path.join(backendPath, "src", "routes", "user.Router.js"),
       userRoutesJsContent
     );
 
@@ -545,10 +543,104 @@ frontend/*.sw?
 
     const readmeContent =
     `
-# Backend Created Using Mahfuz-JS Library
+# Getting Started With Mahfuz JS MERN Stack Library
+
+## Project Directory Structure
+\`\`\`
+appName/
+├── backend/
+│   ├── public/
+│   │   └── temp/
+│   ├── src/
+│   │   ├── app/
+│   │   │   └── app.js
+│   │   ├── backend/
+│   │   │   └── backend.js
+│   │   ├── controllers/
+│   │   │   └── user.Controller.js
+│   │   ├── database/
+│   │   │   └── db.Config.js
+│   │   ├── middlewares/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   │   └── user.Router.js
+│   │   ├── server/
+│   │   │   └── server.js
+│   ├── .env
+│   ├── .prettierignore
+│   ├── .prettierrc
+│   ├── package.json
+│   └── vercel.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── Header.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── contexts/
+│   │   ├── app/
+│   │   │   └── store.js
+│   │   ├── frontend/
+│   │   │   └── frontend.jsx
+│   │   ├── layouts/
+│   │   │   └── layout.jsx
+│   │   ├── pages/
+│   │   │   ├── NotFound.jsx
+│   │   │   └── Welcome.jsx
+│   │   ├── routes/
+│   │   │   └── Router.jsx
+│   │   ├── server/
+│   │   │   └── Index.jsx
+│   │   ├── styles/
+│   │       └── Tailwind.css
+│   ├── .env
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── vercel.json
+│   └── vite.config.js
+├── .gitignore
+└── Readme.md
+\`\`\`
+## Setup
+
+## Start The Backend Server
+open a new terminal and type
+\`\`\`bash
+cd backend
+npm run backend
+\`\`\`
+
+## Start The Frontend Server
+open a new terminal and type
+\`\`\`
+cd frontend
+npm run frontend
+\`\`\`
+# Credits
+
+## Author
+Mohammad Mahfuz Rahman
+
+Email: mahfuzrahman0712@gmail.com 
+
+Github: https://github.com/mahfuz0712
+
+Linkedin: https://www.linkedin.com/in/mahfuz0712/
+
+
+## License
+MIT License
+
+\`\`\`javascript
+console.log("Happy Coding! 🚀");
+\`\`\
     `
     ;
-    fs.writeFileSync(path.join(backendPath, "README.md"), readmeContent);
+    fs.writeFileSync(path.join(projectPath, "README.md"), readmeContent);
 
 
     const packageJson = 
@@ -595,6 +687,7 @@ frontend/*.sw?
         frontendDirs.push(path.join(frontendPath,"src","assets"));
         frontendDirs.push(path.join(frontendPath,"src","components"));
         frontendDirs.push(path.join(frontendPath,"src","contexts"));
+        frontendDirs.push(path.join(frontendPath,"src","app"));
         frontendDirs.push(path.join(frontendPath,"src","frontend"));
         frontendDirs.push(path.join(frontendPath,"src","layouts"));
         frontendDirs.push(path.join(frontendPath,"src","pages"));
@@ -606,6 +699,7 @@ frontend/*.sw?
         const frontendFiles = [];
         frontendFiles.push(path.join(frontendPath,"src","components","Header.jsx"));
         frontendFiles.push(path.join(frontendPath,"src","components","Footer.jsx"));
+        frontendFiles.push(path.join(frontendPath,"src","app","store.js"));
         frontendFiles.push(path.join(frontendPath,"src","frontend","Frontend.jsx"));
         frontendFiles.push(path.join(frontendPath,"src","layouts","Layout.jsx"));
         frontendFiles.push(path.join(frontendPath,"src","pages","Welcome.jsx"));
@@ -618,7 +712,6 @@ frontend/*.sw?
         frontendFiles.push(path.join(frontendPath,"index.html"));
         frontendFiles.push(path.join(frontendPath,"package.json"));
         frontendFiles.push(path.join(frontendPath,"postcss.config.js"));
-        frontendFiles.push(path.join(frontendPath,"README.md"));
         frontendFiles.push(path.join(frontendPath,"tailwind.config.js"));
         frontendFiles.push(path.join(frontendPath,"vercel.json"));
         frontendFiles.push(path.join(frontendPath,"vite.config.js"));
@@ -631,7 +724,10 @@ frontend/*.sw?
             console.error("No Internet");
             return;
           } else {
-            console.log("File downloaded successfully:", filePath);
+            // wait for five seconds 
+            setTimeout(() => {
+              // console.log("Downloaded MahfuzJs.png");
+            }, 5000);
           }
         });
         const url2 = "https://drive.google.com/uc?export=download&id=1FW5tS8XqQCXa1cDb2MDPJ8MZOlM0gPC0"
@@ -640,9 +736,13 @@ frontend/*.sw?
           if (err) {
             console.error("No Internet");
             return;
-          } else {
-            console.log("File downloaded successfully:", filePath);
+          }  else {
+            // wait for five seconds 
+            setTimeout(() => {
+              // console.log("Downloaded MahfuzJs.png");
+            }, 5000);
           }
+
         });
 
 
@@ -766,7 +866,7 @@ export default Layout;
 
         `
         ;
-        const layoutJsxPath = path.join(frontendPath, "src", "components", "Layout.jsx");
+        const layoutJsxPath = path.join(frontendPath, "src", "layouts", "Layout.jsx");
         fs.writeFileSync(layoutJsxPath, layoutJsxContent);
 
 
@@ -927,7 +1027,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Layout from "../layout/Layout.jsx";
+import Layout from "../layouts/Layout.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Welcome from "../pages/Welcome.jsx";
 const Router = createBrowserRouter(
@@ -1109,15 +1209,6 @@ export default {
         ;
         const postcssConfigPath = path.join(frontendPath, "postcss.config.js");
         fs.writeFileSync(postcssConfigPath, postcssConfigContent);
-
-
-        const readmeContentFrontend =
-        `
-# Frontend Created By Mahfuz Js Library
-        `
-        ;
-        const readmePathFrontend = path.join(frontendPath, "README.md");
-        fs.writeFileSync(readmePathFrontend, readmeContentFrontend);
 
 
         const tailwindConfigContent =

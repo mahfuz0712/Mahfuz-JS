@@ -1,6 +1,6 @@
 [Setup]
 AppName=Mahfuz JS
-AppVersion=1.0.0
+AppVersion=1.0.1
 DefaultDirName={pf}\Mahfuz JS
 DefaultGroupName=Mahfuz JS
 OutputBaseFilename=setup
